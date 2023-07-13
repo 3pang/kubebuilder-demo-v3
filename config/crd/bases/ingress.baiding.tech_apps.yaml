@@ -35,6 +35,7 @@ spec:
             description: AppSpec defines the desired state of App
             properties:
               enable_ingress:
+                default: false
                 description: Foo is an example field of App. Edit app_types.go to
                   remove/update
                 type: boolean
