@@ -7,7 +7,7 @@ WORKDIR /workspace
 
 # --->new
 COPY manager manager
-
+COPY internal/controller/template/ /workspace/
 # Copy the Go Modules manifests
 #<-
 # COPY go.mod go.mod
@@ -36,7 +36,8 @@ COPY manager manager
 #FROM gcr.io/distroless/static:nonroot
 FROM alpine:3.14
 WORKDIR /
-COPY --from=builder /workspace/manager .
+#COPY --from=builder /workspace/manager .
+COPY --from=builder /workspace/ .
 USER 65532:65532
 
 ENTRYPOINT ["/manager"]
