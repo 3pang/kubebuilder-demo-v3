@@ -35,4 +35,3 @@ patches:
         path: "/webhooks/0/clientConfig/service"
     target:
       kind: ValidatingWebhookConfiguration
-      
