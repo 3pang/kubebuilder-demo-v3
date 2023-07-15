@@ -38,6 +38,7 @@ func (r *App) SetupWebhookWithManager(mgr ctrl.Manager) error {
 // TODO(user): EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 
 //+kubebuilder:webhook:path=/mutate-ingress-baiding-tech-v1beta1-app,mutating=true,failurePolicy=fail,sideEffects=None,groups=ingress.baiding.tech,resources=apps,verbs=create;update,versions=v1beta1,name=mapp.kb.io,admissionReviewVersions=v1
+//+kubebuilder:webhook:path=/validate-apps-v1-deployment,mutating=false,failurePolicy=fail,sideEffects=None,groups=apps,resources=deployments,verbs=create;update,versions=v1,name=mdeploy.kb.io,admissionReviewVersions=v1
 
 var _ webhook.Defaulter = &App{}
 
