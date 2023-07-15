@@ -5,4 +5,4 @@ kind: Kustomization
 images:
 - name: controller
   newName: registry.cn-beijing.aliyuncs.com/wyns/wyregistry
-  newTag: v1.0.9
+  newTag: v1.1.7
