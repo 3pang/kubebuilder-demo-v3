@@ -386,7 +386,7 @@ spec:
         - --leader-elect
         command:
         - /manager
-        image: registry.cn-beijing.aliyuncs.com/wyns/wyregistry:v1.1.7
+        image: registry.cn-beijing.aliyuncs.com/wyns/wyregistry:v1.1.9
         livenessProbe:
           httpGet:
             path: /healthz
