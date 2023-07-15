@@ -386,7 +386,11 @@ spec:
         - --leader-elect
         command:
         - /manager
+<<<<<<< HEAD
         image: registry.cn-beijing.aliyuncs.com/wyns/wyregistry:v1.1.10
+=======
+        image: registry.cn-beijing.aliyuncs.com/wyns/wyregistry:v1.1.9
+>>>>>>> 7bf5530a4530beefbf370aa562462531901624e3
         livenessProbe:
           httpGet:
             path: /healthz
@@ -544,6 +548,7 @@ webhooks:
     service:
       name: kubebuilder-demo-v3-webhook-service
       namespace: kubebuilder-demo-v3-system
+<<<<<<< HEAD
       path: /validate-apps-v1-deployment
   failurePolicy: Fail
   name: mdeploy.kb.io
@@ -564,6 +569,8 @@ webhooks:
     service:
       name: kubebuilder-demo-v3-webhook-service
       namespace: kubebuilder-demo-v3-system
+=======
+>>>>>>> 7bf5530a4530beefbf370aa562462531901624e3
       path: /validate-ingress-baiding-tech-v1beta1-app
   failurePolicy: Fail
   name: vapp.kb.io
@@ -578,3 +585,26 @@ webhooks:
     resources:
     - apps
   sideEffects: None
+<<<<<<< HEAD
+=======
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: kubebuilder-demo-v3-webhook-service
+      namespace: kubebuilder-demo-v3-system
+      path: /validate-apps-v1-deployment
+  failurePolicy: Fail
+  name: mdeploy.kb.io
+  rules:
+  - apiGroups:
+    - apps
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - deployments
+  sideEffects: None
+>>>>>>> 7bf5530a4530beefbf370aa562462531901624e3

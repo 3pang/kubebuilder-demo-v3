@@ -6,4 +6,8 @@ spec:
   image: nginx:latest
   replicas: 3
   enable_ingress: true #会被修改为true false
+<<<<<<< HEAD
   enable_service: false  #成功
+=======
+  enable_service: true  #成功
+>>>>>>> 7bf5530a4530beefbf370aa562462531901624e3
