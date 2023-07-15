@@ -50,8 +50,10 @@ func (r *App) Default() {
 }
 
 // TODO(user): change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-// +kubebuilder:webhook:path=/validate-ingress-baiding-tech-v1beta1-app,mutating=false,failurePolicy=fail,sideEffects=None,groups=ingress.baiding.tech,resources=apps,verbs=create;update,versions=v1beta1,name=vapp.kb.io,admissionReviewVersions=v1
-// +kubebuilder:webhook:path=/validate-apps-v1-deployment,mutating=false,failurePolicy=fail,sideEffects=None,groups=apps,resources=deployments,verbs=create;update,versions=v1,name=mdeploy.kb.io,admissionReviewVersions=v1
+
+//+kubebuilder:webhook:path=/validate-ingress-baiding-tech-v1beta1-app,mutating=false,failurePolicy=fail,sideEffects=None,groups=ingress.baiding.tech,resources=apps,verbs=create;update,versions=v1beta1,name=vapp.kb.io,admissionReviewVersions=v1
+//+kubebuilder:webhook:path=/validate-apps-v1-deployment,mutating=false,failurePolicy=fail,sideEffects=None,groups=apps,resources=deployments,verbs=create;update,versions=v1,name=mdeploy.kb.io,admissionReviewVersions=v1
+
 var _ webhook.Validator = &App{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type

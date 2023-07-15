@@ -36,26 +36,6 @@ webhooks:
     service:
       name: webhook-service
       namespace: system
-      path: /validate-ingress-baiding-tech-v1beta1-app
-  failurePolicy: Fail
-  name: vapp.kb.io
-  rules:
-  - apiGroups:
-    - ingress.baiding.tech
-    apiVersions:
-    - v1beta1
-    operations:
-    - CREATE
-    - UPDATE
-    resources:
-    - apps
-  sideEffects: None
-- admissionReviewVersions:
-  - v1
-  clientConfig:
-    service:
-      name: webhook-service
-      namespace: system
       path: /validate-apps-v1-deployment
   failurePolicy: Fail
   name: mdeploy.kb.io
@@ -69,4 +49,24 @@ webhooks:
     - UPDATE
     resources:
     - deployments
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-ingress-baiding-tech-v1beta1-app
+  failurePolicy: Fail
+  name: vapp.kb.io
+  rules:
+  - apiGroups:
+    - ingress.baiding.tech
+    apiVersions:
+    - v1beta1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - apps
   sideEffects: None
