@@ -108,7 +108,7 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "App")
 		os.Exit(1)
 	}
-
+	mgr.GetWebhookServer().Register("/mutate-apps-v1-deployment", &webhook.Admission{Handler: &workload.DeployMutationWrapper{Client: mgr.GetClient()}})
 	mgr.GetWebhookServer().Register("/validate-apps-v1-deployment", &webhook.Admission{Handler: &workload.DeployWrapper{Client: mgr.GetClient()}})
 	if err = (&ingressv1beta1.App{}).SetupWebhookWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create webhook", "webhook", "App")

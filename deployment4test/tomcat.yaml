@@ -6,10 +6,8 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    owner/name: wy
-  name: wy-tomcat-deployment
-  namespace: wyns
+    name: wy-tomcat-deployment
+    namespace: wyns
 spec:
   selector:
     matchLabels:
