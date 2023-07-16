@@ -68,12 +68,12 @@ func main() {
 	ctrl.SetLogger(zap.New(zap.UseFlagOptions(&opts)))
 
 	//注入本地证书，本地调试
-	path, err := os.Getwd()
-	if err != nil {
-		setupLog.Error(err, "unable to get work dir")
-		os.Exit(1)
-	}
-	certPath := path + "/certs"
+	//path, err := os.Getwd()
+	//if err != nil {
+	//	setupLog.Error(err, "unable to get work dir")
+	//	os.Exit(1)
+	//}
+	//certPath := path + "/certs"
 
 	mgr, err := ctrl.NewManager(ctrl.GetConfigOrDie(), ctrl.Options{
 		Scheme:                 scheme,
@@ -82,7 +82,7 @@ func main() {
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
 		LeaderElectionID:       "94ba189a.baiding.tech",
-		CertDir:                certPath,
+		//CertDir:                certPath,
 		// LeaderElectionReleaseOnCancel defines if the leader should step down voluntarily
 		// when the Manager ends. This requires the binary to immediately end when the
 		// Manager is stopped, otherwise, this setting is unsafe. Setting this significantly
